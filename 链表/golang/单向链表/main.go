@@ -3,8 +3,10 @@ package main
 import "fmt"
 
 // 单向列表
+
+type DataObject interface{}
 type Node struct {
-	data interface{}
+	data DataObject
 	next *Node
 }
 
@@ -17,8 +19,8 @@ func (self *LinkList) AddNode(node *Node, index int) (err error) {
 		self.Head = node
 		return
 	}
-	linklist_length := self.Length()
-	if index < 0 || index > linklist_length {
+	linklist_Size := self.Size()
+	if index < 0 || index > linklist_Size {
 		err = fmt.Errorf("Wrong Index Error")
 		return
 	}
@@ -32,8 +34,8 @@ func (self *LinkList) AddNode(node *Node, index int) (err error) {
 	return
 }
 func (self *LinkList) DelNode(index int) (err error) {
-	linklist_length := self.Length()
-	if index < 0 || index > linklist_length {
+	linklist_Size := self.Size()
+	if index < 0 || index > linklist_Size {
 		err = fmt.Errorf("Wrong Index Error")
 		return
 	}
@@ -44,7 +46,7 @@ func (self *LinkList) DelNode(index int) (err error) {
 	p.next = p.next.next
 	return
 }
-func (self *LinkList) Length() int {
+func (self *LinkList) Size() int {
 	i := 0
 	p := self.Head
 
@@ -62,6 +64,19 @@ func (self *LinkList) PrintLinkList() {
 		fmt.Printf("%v\t", p.data)
 		p = p.next
 	}
+}
+func (self *LinkList) Index(index int) (node *Node, err error) {
+	linklist_Size := self.Size()
+	if index < 0 || index > linklist_Size-1 {
+		err = fmt.Errorf("Wrong Index Error")
+		return
+	}
+	p := self.Head
+	for i := 0; i < index-1; i++ {
+		p = p.next
+	}
+	node = p.next
+	return
 }
 func main() {
 	var link LinkList
@@ -85,4 +100,5 @@ func main() {
 	}
 	fmt.Println()
 	link.PrintLinkList()
+	fmt.Println(link.Index(0))
 }
