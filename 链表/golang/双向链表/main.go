@@ -14,13 +14,14 @@ type DoubleLinkList struct {
 	Head, Tail *Node
 }
 
-func (self *DoubleLinkList) Add(node *Node, index int)(err error) {
+func (self *DoubleLinkList) AddNode(node *Node, index int)(err error) {
 	if self.Head == nil {
 		self.Head = node
 		return
 	}
 	linklist_Size := self.Size()
-	if index < 0 || index > linklist_Size -1 {
+	//fmt.Println(12345, linklist_Size)
+	if index < 0 || index > linklist_Size {
 		err = fmt.Errorf("Wrong Index Error")
 		return
 	}
@@ -31,13 +32,14 @@ func (self *DoubleLinkList) Add(node *Node, index int)(err error) {
 	node.Next = p.Next
 	node.Pre = p
 	p.Next = node
-	
+
 	return
 }
 func (self *DoubleLinkList) Size() int {
 	i := 0
 	p := self.Head
 	for p != nil {
+		//fmt.Println(666, p)
 		i += 1
 		p = p.Next
 	}
@@ -54,7 +56,7 @@ func (self *DoubleLinkList) PrintDoubleLinkList() {
 
 func (self *DoubleLinkList) Index(index int)(node *Node,err error){
 	linklist_Size := self.Size()
-	if index < 0 || index > linklist_Size -1 {
+	if index < 0 || index > linklist_Size {
 		err = fmt.Errorf("Wrong Index Error")
 		return
 	}
@@ -64,4 +66,21 @@ func (self *DoubleLinkList) Index(index int)(node *Node,err error){
 	}
 	node = p.Next
 	return
+}
+
+func main() {
+	var link DoubleLinkList
+	for i := 0; i < 4; i++ {
+		node := &Node{
+			Val: fmt.Sprintf("node%d", i),
+			Next: nil,
+			Pre:nil,
+		}
+		err := link.AddNode(node, i)
+		if err != nil {
+			fmt.Println("link.AddNode err", err)
+			return
+		}
+	}
+	link.PrintDoubleLinkList()
 }

@@ -67,7 +67,7 @@ func (self *LinkList) PrintLinkList() {
 }
 func (self *LinkList) Index(index int) (node *Node, err error) {
 	linklist_Size := self.Size()
-	if index < 0 || index > linklist_Size-1 {
+	if index < 0 || index > linklist_Size {
 		err = fmt.Errorf("Wrong Index Error")
 		return
 	}
