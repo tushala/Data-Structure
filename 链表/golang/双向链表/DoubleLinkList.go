@@ -32,7 +32,7 @@ func (self *DoubleLinkList) AddNode(node *Node, index int)(err error) {
 	node.Next = p.Next
 	node.Pre = p
 	p.Next = node
-
+	
 	return
 }
 func (self *DoubleLinkList) Size() int {
@@ -67,6 +67,7 @@ func (self *DoubleLinkList) Index(index int)(node *Node,err error){
 	node = p.Next
 	return
 }
+// 差 del
 
 func main() {
 	var link DoubleLinkList
