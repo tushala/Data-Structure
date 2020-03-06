@@ -46,10 +46,10 @@ func (self *Tree) FindMax() int {
 
 //前序遍历
 func (self *Tree) PreorderTravel(node *TreeNode) {
-	if node == nil{
+	if node == nil {
 		return
 	}
-	fmt.Print(node.Val,"\t")
+	fmt.Print(node.Val, "\t")
 	self.PreorderTravel(node.left)
 
 	self.PreorderTravel(node.right)
@@ -57,31 +57,43 @@ func (self *Tree) PreorderTravel(node *TreeNode) {
 
 //中序遍历
 func (self *Tree) InorderTravel(node *TreeNode) {
-	if node == nil{
+	if node == nil {
 		return
 	}
 	self.InorderTravel(node.left)
-	fmt.Print(node.Val,"\t")
+	fmt.Print(node.Val, "\t")
 	self.InorderTravel(node.right)
 }
 
 //后序遍历
 func (self *Tree) PostorderTravel(node *TreeNode) {
-	if node == nil{
+	if node == nil {
 		return
 	}
 	self.PostorderTravel(node.left)
 	self.PostorderTravel(node.right)
-	fmt.Print(node.Val,"\t")
+	fmt.Print(node.Val, "\t")
 }
 
 //层序遍历
 func (self *Tree) LevelorderTravel(node *TreeNode) {
-	if node == nil{
+	if node == nil {
 		return
 	}
-	fmt.Println(node.Val)
 
+	stack := make([]*TreeNode, 0, 1000)
+	stack = append(stack, node)
+	for len(stack) > 0 {
+		node := stack[0]
+		fmt.Print(node.Val, "\t")
+		if node.left != nil{
+			stack = append(stack, node.left)
+		}
+		if node.right != nil{
+			stack = append(stack, node.right)
+		}
+		stack = stack[1:]
+	}
 }
 
 func main() {
@@ -92,5 +104,6 @@ func main() {
 	}
 	fmt.Println(tree.FindMin())
 	fmt.Println(tree.FindMax())
-	tree.InorderTravel(tree.RootNode)
+	//tree.InorderTravel(tree.RootNode)
+	tree.LevelorderTravel(tree.RootNode)
 }
