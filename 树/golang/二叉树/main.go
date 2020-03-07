@@ -86,24 +86,78 @@ func (self *Tree) LevelorderTravel(node *TreeNode) {
 	for len(stack) > 0 {
 		node := stack[0]
 		fmt.Print(node.Val, "\t")
-		if node.left != nil{
+		if node.left != nil {
 			stack = append(stack, node.left)
 		}
-		if node.right != nil{
+		if node.right != nil {
 			stack = append(stack, node.right)
 		}
 		stack = stack[1:]
 	}
 }
 
+//func (self *Tree)SuccessorNode(node *TreeNode)*TreeNode{
+//	if node.right != nil{
+//		curr := node.right
+//		for curr.left != nil{
+//			curr = curr.left
+//		}
+//		return curr
+//	}else if node.right == nil && node.
+//}
+// 根据前序遍历重构二叉树（之一解）
+func PreorderTravelTOTree(r []int) (node *TreeNode) {
+	if len(r) == 0 {
+		return nil
+	}
+	top := 0
+	stack := make([]*TreeNode, 0, len(r))
+	for i, v := range r {
+		cur_node := &TreeNode{Val: v}
+		if top == 0 || v < stack[top-1].Val {
+			if top > 0 {
+				back_node := stack[top-1]
+				back_node.left = cur_node
+			}
+
+			top++
+		} else {
+			if stack[top-1].left!=nil{
+				top -= 1
+			}else{
+				top -= 2
+			}
+			back_node := stack[top]
+			back_node.right = cur_node
+			//}
+		}
+
+		stack = append(stack, cur_node)
+		if top == 0 && len(stack) > 1 {
+			// 重回根节点
+			rnode := PreorderTravelTOTree(r[i:])
+			stack[0].right = rnode
+			break
+		}
+	}
+	return stack[0]
+}
 func main() {
 	tree := &Tree{}
 	insert_slice := []int{17, 5, 34, 2, 11, 35, 29, 38, 9, 16, 8}
 	for _, i := range insert_slice {
 		tree.RootNode = add(tree.RootNode, i)
 	}
-	fmt.Println(tree.FindMin())
-	fmt.Println(tree.FindMax())
+	//fmt.Println(tree.FindMin())
+	//fmt.Println(tree.FindMax())
 	//tree.InorderTravel(tree.RootNode)
-	tree.LevelorderTravel(tree.RootNode)
+	//fmt.Println()
+	//tree.LevelorderTravel(tree.RootNode)
+	s1 := []int{7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12}
+	node := PreorderTravelTOTree(s1)
+	fmt.Println(node.left)
+	fmt.Println(node.left.left)
+	fmt.Println(node.right)
+	fmt.Println(node.right.right)
+	fmt.Println(node.right.right.right)
 }
