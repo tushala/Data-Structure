@@ -26,6 +26,12 @@ func add(t *TreeNode, value int) *TreeNode {
 	return t
 }
 
+// todo 删除节点
+//func delete(t *TreeNode, value int) *TreeNode{
+//	if t == nil{
+//		return nil
+//	}
+//}
 // 查找最小值
 func (self *Tree) FindMin() int {
 	p := self.RootNode
