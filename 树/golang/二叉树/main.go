@@ -26,11 +26,48 @@ func add(t *TreeNode, value int) *TreeNode {
 	return t
 }
 
-// todo 删除节点
-//func delete(t *TreeNode, value int) *TreeNode{
-//	if t == nil{
-//		return nil
-//	}
+// leetcode450 删除节点
+
+func Delete(t *TreeNode, key int) *TreeNode{
+	var findMax func(*TreeNode) int  // 后继节点
+	findMax = func (node *TreeNode) int  {
+		if node.right == nil {
+			return node.Val
+		}
+		return findMax(node.right)
+	}
+	if t == nil{
+		return nil
+	}
+	if key < t.Val{
+		t.left = Delete(t.left, key)
+		return t
+	}else if key > t.Val{
+		t.right = Delete(t.right, key)
+		return t
+	}else{
+		if t.left == nil && t.right == nil {
+			return nil
+		}else if t.left == nil{
+			return t.right
+		}else if t.right == nil{
+			return t.left
+		}else{
+			max := findMax(t.left)
+			t.Val = max
+			t.left = Delete(t.left, max)
+			return t
+		}
+	}
+}
+
+// 获取后继节点
+//func BackSuccessor(t *TreeNode) *TreeNode{
+//
+//}
+//// 获取前驱节点
+//func PreSuccessor(t *TreeNode) *TreeNode{
+//
 //}
 // 查找最小值
 func (self *Tree) FindMin() int {
@@ -148,22 +185,37 @@ func PreorderTravelTOTree(r []int) (node *TreeNode) {
 	}
 	return stack[0]
 }
+
 func main() {
-	tree := &Tree{}
-	insert_slice := []int{17, 5, 34, 2, 11, 35, 29, 38, 9, 16, 8}
-	for _, i := range insert_slice {
-		tree.RootNode = add(tree.RootNode, i)
-	}
+	//tree := &Tree{}
+	//insert_slice := []int{17, 5, 34, 2, 11, 35, 29, 38, 9, 16, 8}
+	//for _, i := range insert_slice {
+	//	tree.RootNode = add(tree.RootNode, i)
+	//}
 	//fmt.Println(tree.FindMin())
 	//fmt.Println(tree.FindMax())
 	//tree.InorderTravel(tree.RootNode)
 	//fmt.Println()
 	//tree.LevelorderTravel(tree.RootNode)
-	s1 := []int{7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12}
-	node := PreorderTravelTOTree(s1)
-	fmt.Println(node.left)
-	fmt.Println(node.left.left)
-	fmt.Println(node.right)
-	fmt.Println(node.right.right)
-	fmt.Println(node.right.right.right)
+	//s1 := []int{7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12}
+	//node := PreorderTravelTOTree(s1)
+	//fmt.Println(node.left)
+	//fmt.Println(node.left.left)
+	//fmt.Println(node.right)
+	//fmt.Println(node.right.right)
+	//fmt.Println(node.right.right.right)
+	t0 := &TreeNode{Val:7}
+	t10 := &TreeNode{Val:17}
+	t1 := &TreeNode{Val:4}
+	t2 := &TreeNode{Val:1}
+	t3 := &TreeNode{Val:6}
+	t0.left = t1
+	t0.right = t10
+	t1.left = t2
+	t1.right = t3
+	t4 := Delete(t0,7)
+	fmt.Println(t4.Val)
+	fmt.Println(t4.left)
+	fmt.Println(t4.left.left)
+	fmt.Println(t4.right)
 }
