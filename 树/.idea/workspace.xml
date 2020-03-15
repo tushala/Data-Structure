@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f082fe7c-6a1b-469b-9810-bf3b1367668f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AVLTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/AVLTree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/RB-Tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/RB-Tree.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,15 +21,12 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$USER_HOME$/Desktop/abccba.py">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="93">
                     <caret line="457" column="14" selection-start-line="457" selection-start-column="14" selection-end-line="457" selection-end-column="14" />
-                    <folding>
-                      <element signature="e#8111#8127#0" expanded="true" />
-                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -87,20 +83,21 @@
     <session id="32977840">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.18" value="4" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.34" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -127,33 +124,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BinarySearchTree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1560">
-              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AVLTree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3600">
-              <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RB-Tree.py">
+        <entry file="file://$PROJECT_DIR$/python/RB-Tree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="269" column="23" lean-forward="true" selection-start-line="269" selection-start-column="23" selection-end-line="269" selection-end-column="23" />
-              <folding>
-                <marker date="1570632423822" expanded="true" signature="7039:9659" ph="..." />
-                <marker date="1570632423822" expanded="true" signature="9686:9940" ph="..." />
-              </folding>
+            <state relative-caret-position="396">
+              <caret line="150" selection-start-line="150" selection-end-line="150" />
             </state>
           </provider>
         </entry>
@@ -210,6 +185,7 @@
         <option value="$PROJECT_DIR$/B-Tree.py" />
         <option value="$USER_HOME$/Desktop/abccba.py" />
         <option value="$PROJECT_DIR$/RB-Tree.py" />
+        <option value="$PROJECT_DIR$/python/RB-Tree.py" />
       </list>
     </option>
   </component>
@@ -220,10 +196,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="979" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -410,7 +386,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49805447" weight="0.14227642" />
       <window_info id="Structure" order="1" sideWeight="0.5019455" side_tool="true" weight="0.1461126" />
@@ -515,38 +490,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/B-Tree.py" />
-    <entry file="file://$PROJECT_DIR$/AVLTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BinarySearchTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1560">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/AVLTree.py" />
+    <entry file="file://$PROJECT_DIR$/BinarySearchTree.py" />
+    <entry file="file://$PROJECT_DIR$/RB-Tree.py" />
     <entry file="file://$USER_HOME$/Desktop/abccba.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="457" column="14" selection-start-line="457" selection-start-column="14" selection-end-line="457" selection-end-column="14" />
-          <folding>
-            <element signature="e#8111#8127#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RB-Tree.py">
+    <entry file="file://$PROJECT_DIR$/python/RB-Tree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="269" column="23" lean-forward="true" selection-start-line="269" selection-start-column="23" selection-end-line="269" selection-end-column="23" />
-          <folding>
-            <marker date="1570632423822" expanded="true" signature="7039:9659" ph="..." />
-            <marker date="1570632423822" expanded="true" signature="9686:9940" ph="..." />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
         </state>
       </provider>
     </entry>

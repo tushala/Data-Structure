@@ -140,7 +140,7 @@ class RBTree:
                     cur.right = node
                     break
                 cur = cur.right
-                continue
+
 
             if cur.val > node.val:
                 if not cur.left:
@@ -148,7 +148,7 @@ class RBTree:
                     cur.left = node
                     break
                 cur = cur.left
-        pass
+
 
     def check_node(self, node):
         '''
