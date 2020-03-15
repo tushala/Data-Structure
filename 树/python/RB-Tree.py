@@ -79,7 +79,6 @@ class RBTree:
                 parent.left = right
             else:
                 parent.right = right
-        pass
 
     def right_rotate(self, node):
         print("right rotate", node.val)
@@ -120,7 +119,6 @@ class RBTree:
                 parent.left = left
             else:
                 parent.right = left
-        pass
 
     def insert_node(self, node):
         '''
@@ -148,7 +146,6 @@ class RBTree:
                     cur.left = node
                     break
                 cur = cur.left
-
 
     def check_node(self, node):
         '''
