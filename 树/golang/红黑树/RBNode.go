@@ -35,3 +35,15 @@ func (self *RBNode) set_Black_Node() {
 func (self *RBNode) set_Red_Node() {
 	self.color = RED
 }
+func (self *RBNode) getUncle() *RBNode {
+	parent := self.parent
+	if parent != nil {
+		if self == parent.left {
+			return parent.right
+		} else {
+			return parent.left
+		}
+	} else {
+		return nil
+	}
+}
