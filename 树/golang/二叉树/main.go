@@ -62,13 +62,39 @@ func Delete(t *TreeNode, key int) *TreeNode{
 }
 
 // 获取后继节点
-//func BackSuccessor(t *TreeNode) *TreeNode{
-//
-//}
-//// 获取前驱节点
-//func PreSuccessor(t *TreeNode) *TreeNode{
-//
-//}
+func BackSuccessor(root, t *TreeNode) *TreeNode{
+	if root == nil {
+		return nil
+	}
+	if t.Val <= root.Val {
+		return PreSuccessor(root.left, t)
+	}else{
+		res := PreSuccessor(root.right, t)
+		if res == nil{
+			return root
+		}else{
+			return res
+		}
+	}
+}
+
+// 获取前驱节点
+func PreSuccessor(root, t *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if t.Val >= root.Val {
+		return PreSuccessor(root.right, t)
+	}else{
+		res := PreSuccessor(root.left, t)
+		if res == nil{
+			return root
+		}else{
+			return res
+		}
+	}
+}
+
 // 查找最小值
 func (self *Tree) FindMin() int {
 	p := self.RootNode
